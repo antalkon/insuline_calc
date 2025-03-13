@@ -47,8 +47,13 @@ func (s *CalcInsulineService) CalcInsuline(i *req.CalcInsuline, c echo.Context) 
 		snack = (*i.Snack + 1) * *i.SnackCount
 	}
 
+	other := 0
+	if i.Other != nil && i.OtherCount != nil {
+		other = (*i.Other + 1) * *i.OtherCount
+	}
+
 	// Расчёт дозировки на день и на период
-	DailyDosage := breakfast + lunch + dinner + snack
+	DailyDosage := breakfast + lunch + dinner + snack + other
 	PeriodDosage := DailyDosage * i.Days
 
 	// Определение дозировки инсулиновой ручки

@@ -10,6 +10,8 @@ type CalcInsuline struct {
 	Dinner      *int          `json:"dinner,omitempty"`          // Опционально
 	Snack       *int          `json:"snack,omitempty"`           // Опционально
 	SnackCount  *int          `json:"snack_count,omitempty"`     // Опционально
+	Other       *int          `json:"other,omitempty"`           // Опционально
+	OtherCount  *int          `json:"other_count,omitempty"`     // Опционально
 	Days        int           `json:"days" validate:"required"`  // Обязательное поле
 }
 
